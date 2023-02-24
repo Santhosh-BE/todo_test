@@ -1,0 +1,17 @@
+
+.employee-table {
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+  
+  .employee-table th,
+  .employee-table td {
+    border: 3px solid #ddd;
+    padding: 8px;
+  }
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
