@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 const schema = yup.object().shape({
-  name: yup.string().required("Name is Required"),
+  name: yup.string().required("Name is Required").matches(/^[A-Za-z]+$/, 'Name should contain only alphabets'),
   address: yup.string().required("Address is Required"),
   state: yup.string().required("state is Required"),
   employeeCode: yup.string().required("Employeecode is Required"),
@@ -32,7 +32,7 @@ function EmployeeForm() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">Name</label>
-            <input type="text" className="form-control" id="name" name="name" {...register("name")} />
+            <input type="text" className="form-control" id="name" name="name" pattern="^[A-Za-z]+$" {...register("name")} />
             {errors.name && <p style={{color:"red"}}>{errors.name.message}</p>}
           </div>
           <div className="mb-3">
